@@ -12,9 +12,16 @@
         <p>Welcome! Here's your weather update for {{ today }}.</p>
 
         <div class="weather-card">
-            <p>Temperature: {{ temperature }}°C</p>
-            <p>Humidity: {{ humidity }}%</p>
-            <p>Condition: {{ condition }}</p>
+	    {% if weather_notice %}
+    		<p class="weather-notice">{{ weather_notice }}</p>
+	    {% endif %}
+            {% if temperature is not none %}
+    	        <p>Temperature: {{ temperature }}°C</p>
+    		<p>Humidity: {{ humidity }}%</p>
+    		<p>Condition: {{ condition }}</p>
+	    {% else %}
+    		<p>Weather details are unavailable right now.</p>
+	    {% endif %}
         </div>
     </div>
 </body>

@@ -4,16 +4,6 @@ A containerized Flask weather dashboard that retrieves live weather information 
 
 This project demonstrates automated testing, continuous integration, Docker containerization, production application serving with Gunicorn, and automated Docker image publishing to GitHub Container Registry (GHCR).
 
-flowchart TD
-    A[GitHub Repository] --> B[GitHub Actions]
-    B --> C{Tests pass?}
-    C -->|No| D[Pipeline fails]
-    C -->|Yes| E[Build Docker Image]
-    E --> F[Publish to GHCR]
-    F --> G[Pull Image]
-    G --> H[Run Container Locally]
-    H --> I[Weather Dashboard]
-    I <--> J[Open-Meteo API]
 
 ## Features
 
@@ -40,7 +30,9 @@ flowchart TD
 
 ## Architecture
 
-Developer pushes code to GitHub → GitHub Actions runs tests → Docker image is built → Image is published to GHCR.
+The diagram below illustrates the application's CI/CD pipeline, container publishing process, and runtime flow.
+
+![Weather Dashboard CI/CD Architecture](docs/architecture.png)
 
 ## Running Locally
 
